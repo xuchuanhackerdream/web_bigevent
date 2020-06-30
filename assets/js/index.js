@@ -30,12 +30,25 @@ function getUserInfo() {
     // },
     success: function (res) {
       console.log(res);
+      
       if (res.status !== 0) {
-        return layui.msg("获取用户信息失败");
+        return layer.msg("获取用户信息失败");
       }
       // 调用renderAvatar渲染用户的头像
       renderAvatar(res.data);
     },
+    // 无论成功还是失败最终都会调用complete回调函数
+    // complete:function(res){
+      // console.log('执行了complete回调函数');
+      // console.log(res)
+      // 在complete回调函数中，可以使用res.responseJSON拿到服务器响应回来的数据
+      // if(res.responseJSON.status===1&&res.responseJSON.message==='身份认证失败！'){
+        // 1强制清空token
+        // localStorage.removeItem('token');
+        // 2强制转换到登录页面
+    //     location.href='/login.html'
+    //   }
+    // }
   });
 }
 // 渲染用户的头像;

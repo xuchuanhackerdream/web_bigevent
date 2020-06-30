@@ -1,4 +1,6 @@
 $(function () {
+
+  
   // 点击去注册的连接
   $("#link_reg").on("click", function () {
     $(".login-box").hide();
@@ -11,6 +13,8 @@ $(function () {
     $(".login-box").show();
     $(".reg-box").hide();
   });
+
+
   // 从layui中获取form对象
   var form=layui.form;
   var layer=layui.layer;
